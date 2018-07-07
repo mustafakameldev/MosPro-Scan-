@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.mka.palnxtest.ButtonTest">
+
+    <Button
+        android:id="@+id/hideButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/hiddenButton"
+        android:layout_marginTop="17dp"
+        android:text="hide buttons " />
+
+    <Button
+        android:id="@+id/hiddenButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/hideButtons"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="36dp"
+        android:text="hidden Button" />
+
+    <io.ghyeok.stickyswitch.widget.StickySwitch
+        android:id="@+id/stickyBtnTestActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:iconPadding="22dp"
+        app:iconSize="22dp"
+        app:leftIcon="@drawable/ic_add"
+        app:leftText="add"
+        app:rightIcon="@drawable/ic_clear"
+        app:rightText="clear"
+        app:selectedTextSize="14sp"
+        app:sliderBackgroundColor="@color/colorStickyBG"
+        app:switchColor="@color/colorSticky"
+        app:textColor="@color/viewfinder_border"
+        app:textSize="12sp" />
+</RelativeLayout>
