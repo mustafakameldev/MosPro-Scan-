@@ -155,5 +155,6 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
         builder.setMessage(scanResult);
         AlertDialog alert = builder.create() ;
         alert.show();
+        Toast.makeText(this, "ggg", Toast.LENGTH_SHORT).show();
     }
 }
