@@ -1,5 +1,41 @@
 <resources>
-    <string name="app_name">PlanX_test</string>
-    <string name="action_settings">Settings</string>
+    <string name="app_name">MosPro Scan</string>
+    <string name="action_settings">product key :</string>
     <string name="title_activity_create_qr">CreateQRActivity</string>
+    <string name="scan">scan</string>
+    <string name="shortfalls">shortfalls</string>
+    <string name="products">products</string>
+    <string name="productName">name :</string>
+    <string name="productPrice">price :</string>
+    <string name="productDesc">description :</string>
+    <string name="productLimit">limit :</string>
+    <string name="hintName">type name </string>
+    <string name="hintPrice">type price</string>
+    <string name="hintDesc">type description</string>
+    <string name="hintLimit">set limit units</string>
+    <string name="productUnits">units : </string>
+    <string name="hintUnits">set units</string>
+    <string name="addProduct">add</string>
+    <string name="addDone">the unit has been uploaded   </string>
+    <string name="writeProduct">please full all product information  </string>
+    <string name="isThere"> this product is exists</string>
+    <string name="price">price</string>
+    <string name="limits"> limits</string>
+    <string name="units">units</string>
+    <string name="product_name">name</string>
+    <string name="submitEdit">submit</string>
+    <string name="edit">edit</string>
+    <string name="delete"> delete</string>
+    <string name="editDone"> product edited </string>
+    <string name="pay">pay</string>
+    <string name="oneMore">more products</string>
+    <string name="productList"> paid list</string>
+    <string name="NoPaid">no. paid</string>
+    <string name="calculate">cal. </string>
+    <string name="done">done</string>
+    <string name="search">search</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_pay">PayActivity</string>
 </resources>

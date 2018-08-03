@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fcfcc0"
+    android:orientation="vertical"
+    tools:context="com.mka.palnxtest.ProductActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="78dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_name_ProductActivity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentTop="true"
+                android:layout_weight="1"
+                android:background="@drawable/text"
+                android:paddingStart="100dp"
+                android:paddingTop="30dp"
+                android:text="TextView"
+                android:textColor="#0f4d79"
+                android:textSize="24sp"
+
+                />
+
+            <EditText
+                android:id="@+id/et_editName_ProductActivity"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/input"
+                android:ems="10"
+
+                android:hint="@string/hintName"
+
+                android:inputType="textPersonName"
+                android:paddingEnd="20dp"
+                android:paddingStart="20dp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+
+                android:text="@string/price"
+                android:textColor="#0f4d79" />
+
+            <RelativeLayout
+                android:layout_width="282dp"
+                android:layout_height="match_parent">
+
+                <EditText
+                    android:id="@+id/et_editPrice_ProductActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/input"
+                    android:ems="10"
+                    android:hint="@string/hintPrice"
+                    android:inputType="textPersonName"
+
+                    android:textColor="#0f4d79" />
+
+                <TextView
+                    android:id="@+id/tv_price_ProductActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/input"
+
+                    android:paddingEnd="20dp"
+                    android:paddingStart="20dp"
+                    android:paddingTop="20dp"
+                    android:text="eeee"
+                    android:textColor="#0f4d79" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/units"
+                android:textColor="#0f4d79"
+
+                />
+
+            <RelativeLayout
+                android:layout_width="282dp"
+                android:layout_height="match_parent">
+
+                <EditText
+                    android:id="@+id/et_editUnits_ProductActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/input"
+                    android:ems="10"
+                    android:hint="@string/hintUnits"
+                    android:inputType="textPersonName"
+                    android:textColor="#0f4d79"
+
+
+                    />
+
+                <TextView
+                    android:id="@+id/tv_units_ProductActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/input"
+                    android:paddingEnd="20dp"
+                    android:paddingStart="20dp"
+
+
+                    android:paddingTop="20dp"
+                    android:text="TextView"
+                    android:textColor="#0f4d79" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/limits"
+                android:textColor="#0f4d79"
+
+                />
+
+            <RelativeLayout
+                android:layout_width="282dp"
+                android:layout_height="match_parent">
+
+                <EditText
+                    android:id="@+id/et_editLimit_ProductActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/input"
+                    android:ems="10"
+                    android:hint="@string/hintLimit"
+                    android:inputType="textPersonName"
+                    android:textColor="#0f4d79"
+
+                    />
+
+                <TextView
+                    android:id="@+id/tv_limit_ProductActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/text"
+                    android:paddingEnd="20dp"
+
+                    android:paddingStart="20dp"
+
+                    android:paddingTop="20dp"
+                    android:text="TextView"
+                    android:textColor="#0f4d79" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/productDesc"
+                android:textColor="#0f4d79"
+
+                />
+
+            <RelativeLayout
+                android:layout_width="282dp"
+                android:layout_height="match_parent">
+
+                <EditText
+                    android:id="@+id/et_editDesc_ProductActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/input"
+                    android:ems="10"
+                    android:hint="@string/hintDesc"
+                    android:inputType="textPersonName"
+                    android:textColor="#0f4d79"
+
+
+                    />
+
+                <TextView
+                    android:id="@+id/tv_desc_ProductActivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/input"
+                    android:paddingEnd="20dp"
+                    android:paddingStart="20dp"
+
+                    android:paddingTop="20dp"
+                    android:text="TextView"
+                    android:textColor="#0f4d79" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_edit_ProductActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/btn"
+            android:elevation="1dp"
+            android:text="@string/submitEdit"
+            android:textColor="#f1ecac" />
+
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fcfcc0"
+    tools:context="com.mka.palnxtest.ChooseActionActivity"
+
+    >
+
+    <Button
+        android:id="@+id/scanBtn_ChooseActivity"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/shortsBtn_ChooseActivity"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="22dp"
+        android:layout_marginStart="133dp"
+        android:background="@drawable/btn"
+        android:stateListAnimator="@null"
+        android:text="@string/scan"
+        android:textColor="#e6e9a6" />
+
+    <Button
+        android:id="@+id/shortsBtn_ChooseActivity"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/scanBtn_ChooseActivity"
+        android:layout_centerVertical="true"
+        android:background="@drawable/btn"
+        android:stateListAnimator="@null"
+        android:text="@string/shortfalls"
+        android:textColor="#e6e9a6" />
+
+    <Button
+        android:id="@+id/productsBtn_ChooseActivity"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/shortsBtn_ChooseActivity"
+        android:layout_below="@+id/shortsBtn_ChooseActivity"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/btn"
+
+        android:stateListAnimator="@null"
+        android:text="@string/products"
+        android:textColor="#e6e9a6" />
+
+    <Button
+        android:id="@+id/btn_pay_ChooseActivity"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/scanBtn_ChooseActivity"
+        android:layout_alignStart="@+id/scanBtn_ChooseActivity"
+        android:layout_marginBottom="36dp"
+        android:background="@drawable/btn"
+        android:stateListAnimator="@null"
+        android:text="@string/pay"
+        android:textColor="#e6e9a6" />
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
+
+    </FrameLayout>
+
+
+</RelativeLayout>

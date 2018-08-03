@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MosPro Scan</string>
+    <string name="NoPaid">عدد المبيعات</string>
+    <string name="addDone">تم إضافه المنتج</string>
+    <string name="addProduct">إضافه منتج</string>
+    <string name="calculate">إحسب</string>
+    <string name="delete">مسح</string>
+    <string name="done">تم</string>
+    <string name="edit">تعديل</string>
+    <string name="editDone">تم تعديل بيانات المنتج</string>
+    <string name="hintDesc">اكتب الوصف...</string>
+    <string name="hintLimit">اكتب حد المنتج ...</string>
+    <string name="hintName">اكتب الاسم...</string>
+    <string name="hintPrice">اكتب السعر...</string>
+    <string name="hintUnits">اكتب عدد الوحدات ...</string>
+    <string name="isThere">هذا المنتج موجود بالفعل</string>
+    <string name="limits">الحد</string>
+    <string name="oneMore">منتج اكثر</string>
+    <string name="pay">بيع</string>
+    <string name="price">السعر</string>
+    <string name="productDesc">الوصف:</string>
+    <string name="productLimit">الحد:</string>
+    <string name="productList">قائمة المبيعات</string>
+    <string name="productName">الاسم :</string>
+    <string name="productPrice">السعر:</string>
+    <string name="productUnits">الوحدات:</string>
+    <string name="product_name">الاسم:</string>
+    <string name="products">المنتجات</string>
+    <string name="scan">بحث</string>
+    <string name="shortfalls">النواقص</string>
+    <string name="submitEdit">تعديل</string>
+    <string name="units">وحدات</string>
+    <string name="writeProduct">قم بملي جميع الخانات</string>
+    <string name="search">ابحث عنه</string>
+</resources>

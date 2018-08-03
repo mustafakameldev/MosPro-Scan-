@@ -1,8 +1,9 @@
 package com.mka.palnxtest;
+
+import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -17,63 +18,55 @@ import android.widget.Toast;
 
 import com.google.zxing.Result;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
+import java.util.ArrayList;
 
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
 
-import static android.Manifest.permission.CAMERA;
-public class MainActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler {
-    private static final int REQUEST_CAMERA = 1 ;
-    private ZXingScannerView scannerView ;
+public class PayActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler {
+    private static final int REQUEST_CAMERA = 1;
+    private ZXingScannerView scannerView;
+    private ArrayList<String> keys;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        scannerView = new ZXingScannerView(this) ;
+        scannerView = new ZXingScannerView(this);
         setContentView(scannerView);
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
-        {
-            if(checkPermission())
-            {
+        keys = new ArrayList<>();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (checkPermission()) {
                 Toast.makeText(this, "permission granted", Toast.LENGTH_SHORT).show();
-            }else
-            {
+            } else {
                 requestPermission();
             }
         }
     }
 
     private boolean checkPermission() {
-        return (ContextCompat.checkSelfPermission(MainActivity.this , CAMERA)== PackageManager.PERMISSION_GRANTED) ;
+        return (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED);
     }
 
-    void requestPermission()
-    {
-        ActivityCompat.requestPermissions(this , new String[]{CAMERA},REQUEST_CAMERA);
+    void requestPermission() {
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, REQUEST_CAMERA);
     }
 
     @Override
     public void onRequestPermissionsResult(final int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        switch(requestCode)
-        {
-            case REQUEST_CAMERA :
-                if(grantResults.length >0 )
-                {
-                    boolean cameraAccepted = grantResults[0] ==PackageManager.PERMISSION_GRANTED ;
-                    if(cameraAccepted)
-                    {
+        switch (requestCode) {
+            case REQUEST_CAMERA:
+                if (grantResults.length > 0) {
+                    boolean cameraAccepted = grantResults[0] == PackageManager.PERMISSION_GRANTED;
+                    if (cameraAccepted) {
                         Toast.makeText(this, "permission granted", Toast.LENGTH_SHORT).show();
-                    }else {
+                    } else {
                         Toast.makeText(this, "permission denied ", Toast.LENGTH_SHORT).show();
-                        if(Build.VERSION.SDK_INT>= Build.VERSION_CODES.M)
-                        {
-                            if(shouldShowRequestPermissionRationale(CAMERA))
-                            {
+                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                            if (shouldShowRequestPermissionRationale(Manifest.permission.CAMERA)) {
                                 displayAlertMessage("you need to allow access to both permissions", new DialogInterface.OnClickListener() {
                                     @RequiresApi(api = Build.VERSION_CODES.M)
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
-                                        requestPermissions(new String[]{CAMERA} ,REQUEST_CAMERA);
+                                        requestPermissions(new String[]{Manifest.permission.CAMERA}, REQUEST_CAMERA);
                                     }
                                 });
                                 return;
@@ -84,16 +77,14 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
                 break;
         }
     }
+
     @Override
     protected void onResume() {
         super.onResume();
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
-        {
-            if(checkPermission())
-            {
-                if(scannerView == null)
-                {
-                    scannerView = new ZXingScannerView(this) ;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            if (checkPermission()) {
+                if (scannerView == null) {
+                    scannerView = new ZXingScannerView(this);
                     setContentView(scannerView);
                 }
                 scannerView.setResultHandler(this);
@@ -101,26 +92,29 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
             }
         }
     }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
         scannerView.stopCamera();
     }
-    public void displayAlertMessage(String message , DialogInterface.OnClickListener listener)
-    {
-        new AlertDialog.Builder(MainActivity.this)
+
+    public void displayAlertMessage(String message, DialogInterface.OnClickListener listener) {
+        new AlertDialog.Builder(this)
                 .setMessage(message)
-                .setPositiveButton("OK" ,listener)
-                .setNegativeButton("Cancel" , null)
+                .setPositiveButton("OK", listener)
+                .setNegativeButton("Cancel", null)
                 .create()
                 .show();
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -133,40 +127,31 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
         }
         return super.onOptionsItemSelected(item);
     }
+
     @Override
     public void handleResult(final Result result) {
-    final String scanResult = result.getText() ;
+        final String scanResult = result.getText();
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("scan title")
-                .setPositiveButton("add", new DialogInterface.OnClickListener() {
-                  @Override
-                  public void onClick(DialogInterface dialog, int which) {
-                      scannerView.resumeCameraPreview(MainActivity.this);
-                      Intent intent = new Intent(MainActivity.this, AddProductActivity.class);
-                      intent.putExtra("key", scanResult);
-                      startActivity(intent);
-                  }
-              });
-        builder.setNeutralButton(R.string.search, new DialogInterface.OnClickListener() {
+                .setPositiveButton(R.string.oneMore, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        keys.add(scanResult);
+                        scannerView.resumeCameraPreview(PayActivity.this);
+                    }
+                });
+        builder.setNeutralButton(R.string.productList, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                String escapedQuery = null;
-                try {
-                    escapedQuery = URLEncoder.encode(scanResult, "UTF-8");
-                } catch (UnsupportedEncodingException e) {
-                    e.printStackTrace();
-                }
-                Uri uri = Uri.parse("http://www.google.com/#q=" + escapedQuery);
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);
+                Intent paid = new Intent(PayActivity.this, PaidListActivity.class);
 
-
-                // Intent intent = new Intent(Intent.ACTION_VIEW , Uri.parse(scanResult));
-                // startActivity(intent);
+                paid.putExtra("keys", keys);
+                startActivity(paid);
             }
-        }) ;
+        });
         builder.setMessage(scanResult);
-        AlertDialog alert = builder.create() ;
+        AlertDialog alert = builder.create();
         alert.show();
     }
+
 }
